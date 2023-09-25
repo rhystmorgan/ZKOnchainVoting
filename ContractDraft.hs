@@ -175,7 +175,7 @@ pdidMintingPolicy = phoistAcyclic $ plam $ \dp r ctx -> unTermCont $ do
           -- tokenName == signatory && recipient of credential 
             -- (ie user token output PKH must be token name(s))
           userTokenAmt #== pconstant 1
-            #&& refTokenAmt #== pconstant 2
+            #&& refTokenAmt #== pconstant 1
             #&& reflabel #== label100
             #&& userLabel #== label222
 
@@ -239,6 +239,8 @@ pregistryValidator = phoistAcyclic $ plam $ \rp rd r ctx -> unTermCont $ do
       )
       (pconstant ())
       perror
+
+pVotingRecord :: Term s (P)
 
 {- 
 
